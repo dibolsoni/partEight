@@ -1,0 +1,26 @@
+{
+  "name": "sql-library-manager",
+  "version": "0.0.1",
+  "description": "SQL Library Manager from Treehouse",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dibolsoni/partEight.git"
+  },
+  "author": "Decebe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dibolsoni/partEight/issues"
+  },
+  "homepage": "https://github.com/dibolsoni/partEight#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
+    "sequelize": "^5.9.2",
+    "sequelize-cli": "^5.5.0",
+    "sqlite3": "^4.0.9"
+  }
+}
