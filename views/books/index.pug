@@ -1,0 +1,44 @@
+extends ../layout
+
+block content
+  h1= title
+  p.events
+    a(href="/books/new" class="button") Create New Book
+  form(action="/books/search/", method="post")
+    p
+      label(for="search") Search
+      input(type="text", name="search", id="search")
+      input(type="submit", value="Search")
+  if (books != undefined && books.length > 0)
+    table
+      thead
+        tr
+          th Title
+          th Author
+          th Genre
+          th Year
+      tbody
+        each book in books
+          tr
+            td
+              a(href=`/books/${book.id}`) #{book.title}           
+            td= book.author
+            td= book.genre
+            td= book.year
+    if (!searched)
+      p= searched
+        if (currentPage>1 && books.length < 5)
+          a.button(href=`/books?page=${parseInt(currentPage) - 1}`) Back
+        else if (currentPage>1 && books.length == 5 )
+          a.button(href=`/books?page=${parseInt(currentPage) - 1}`) Back
+          a.button(href=`/books?page=${parseInt(currentPage) + 1}`) Next
+        else 
+          a.button(href=`/books?page=2`) Next
+  else
+    tr
+      td
+        a(href="/") No books, do a search or click here to back home!
+      td= books
+
+    
+      
